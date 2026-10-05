@@ -6,11 +6,12 @@ import {
   SettingsRounded,
   AppsRounded,
   WidgetsRounded,
+  DarkModeRounded,
+  LightModeRounded,
 } from '@mui/icons-material'
 import {
   AppBar,
   Box,
-  Button,
   Divider,
   Drawer,
   IconButton,
@@ -20,6 +21,7 @@ import {
   ListItemIcon,
   ListItemText,
   Toolbar,
+  Tooltip,
   Typography,
   useMediaQuery,
   useTheme,
@@ -38,7 +40,7 @@ const navItems = [
   { label: 'Settings', path: '/settings', icon: SettingsRounded },
 ]
 
-export default function MainLayout() {
+export default function MainLayout({ mode, onToggleMode }) {
   const theme = useTheme()
   const location = useLocation()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
@@ -105,10 +107,10 @@ export default function MainLayout() {
         position="fixed"
         elevation={0}
         sx={{
-          backgroundColor: 'rgba(255,255,255,0.9)',
+          backgroundColor: mode === 'dark' ? 'rgba(17,24,39,0.92)' : 'rgba(255,255,255,0.9)',
           color: 'text.primary',
           backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid rgba(148, 163, 184, 0.18)',
+          borderBottom: mode === 'dark' ? '1px solid rgba(148, 163, 184, 0.14)' : '1px solid rgba(148, 163, 184, 0.18)',
           zIndex: (theme) => theme.zIndex.drawer + 1,
         }}
       >
@@ -122,10 +124,17 @@ export default function MainLayout() {
           <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
             Workspace Overview
           </Typography>
-
-          <Button variant="contained" color="primary">
-            New report
-          </Button>
+<Tooltip title={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}>
+  <IconButton
+    aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
+    aria-pressed={mode === 'dark'}
+    onClick={onToggleMode}
+    color="inherit"
+    sx={{ ml: 1 }}
+  >
+    {mode === 'light' ? <DarkModeRounded /> : <LightModeRounded />}
+  </IconButton>
+</Tooltip>
         </Toolbar>
       </AppBar>
 

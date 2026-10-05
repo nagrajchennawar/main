@@ -104,10 +104,10 @@ export default function MoreProjectsPage() {
             <CardContent sx={{ p: 2.75, display: 'flex', flexDirection: 'column', minHeight: 205 }}>
               <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 2.25 }}>
                 <Box sx={{ width: 50, height: 50, borderRadius: 3, display: 'grid', placeItems: 'center', bgcolor: item.tint, color: item.color }}><Icon /></Box>
-                <Chip size="small" label={item.category} sx={{ bgcolor: '#f5f6fa', fontWeight: 600 }} />
+                <Chip size="small" label={item.category} sx={{ bgcolor: 'action.hover', color: 'text.secondary', fontWeight: 600 }} />
               </Stack>
-              <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.75 }}>{item.title}</Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.65, mb: 2 }}>{item.description}</Typography>
+              <Typography variant="h6" sx={{ color: 'text.primary', fontWeight: 800, mb: 0.75 }}>{item.title}</Typography>
+              <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.65, mb: 2 }}>{item.description}</Typography>
               <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mt: 'auto' }}>
                 <Typography variant="caption" sx={{ color: item.color, fontWeight: 700 }}>{item.tag}</Typography>
                 <Icon sx={{ fontSize: 18, opacity: 0.7 }} />

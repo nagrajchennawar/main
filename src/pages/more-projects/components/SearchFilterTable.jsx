@@ -24,9 +24,9 @@ export default function SearchFilterTable() {
         <TextField select label="Team" value={team} onChange={(e) => setTeam(e.target.value)} sx={{ minWidth: 170 }}>{['All teams', 'Design', 'Engineering', 'Marketing'].map((option) => <MenuItem key={option} value={option}>{option}</MenuItem>)}</TextField>
         <TextField select label="Sort by" value={sort} onChange={(e) => setSort(e.target.value)} sx={{ minWidth: 150 }}><MenuItem value="name">Name</MenuItem><MenuItem value="team">Team</MenuItem><MenuItem value="status">Status</MenuItem></TextField>
       </Stack>
-      <TableContainer component={Paper} variant="outlined" sx={{ borderRadius: 3 }}>
+      <TableContainer component={Paper} variant="outlined" sx={{ borderRadius: 3, bgcolor: 'background.paper' }}>
         <Table>
-          <TableHead><TableRow sx={{ bgcolor: '#f8f9fc' }}><TableCell>Name</TableCell><TableCell>Team</TableCell><TableCell>Status</TableCell></TableRow></TableHead>
+          <TableHead><TableRow sx={{ bgcolor: 'action.hover' }}><TableCell sx={{ color: 'text.primary', fontWeight: 700 }}>Name</TableCell><TableCell sx={{ color: 'text.primary', fontWeight: 700 }}>Team</TableCell><TableCell sx={{ color: 'text.primary', fontWeight: 700 }}>Status</TableCell></TableRow></TableHead>
           <TableBody>{rows.map((person) => <TableRow key={person.name} hover><TableCell sx={{ fontWeight: 600 }}>{person.name}</TableCell><TableCell>{person.team}</TableCell><TableCell>{person.status}</TableCell></TableRow>)}</TableBody>
         </Table>
       </TableContainer>

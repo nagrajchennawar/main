@@ -22,7 +22,7 @@ export default function MultiStepForm() {
           <Stack spacing={2}>
             {step === 0 && <TextField label="Full name" value={form.name} onChange={update('name')} required autoComplete="name" />}
             {step === 1 && <><TextField label="Email address" type="email" value={form.email} onChange={update('email')} required autoComplete="email" /><TextField label="Your role" value={form.role} onChange={update('role')} required /></>}
-            {step === 2 && <Box sx={{ p: 2.5, bgcolor: '#f8f9fc', borderRadius: 3 }}><Typography sx={{ fontWeight: 700, mb: 1 }}>Review your details</Typography><Typography>Name: {form.name}</Typography><Typography>Email: {form.email}</Typography><Typography>Role: {form.role}</Typography></Box>}
+            {step === 2 && <Box sx={{ p: 2.5, bgcolor: 'action.hover', borderRadius: 3 }}><Typography sx={{ fontWeight: 700, mb: 1 }}>Review your details</Typography><Typography>Name: {form.name}</Typography><Typography>Email: {form.email}</Typography><Typography>Role: {form.role}</Typography></Box>}
             <Stack direction="row" sx={{ justifyContent: 'space-between' }}><Button disabled={step === 0} onClick={() => setStep((current) => current - 1)}>Back</Button><Button type="submit" variant="contained">{step === steps.length - 1 ? 'Submit' : 'Continue'}</Button></Stack>
           </Stack>
         </Box>

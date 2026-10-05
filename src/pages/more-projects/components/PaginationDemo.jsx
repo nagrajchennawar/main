@@ -12,7 +12,7 @@ export default function PaginationDemo() {
   return <ProjectPanel>
     <Stack spacing={2.5} alignItems="center">
       <Typography color="text.secondary">Showing {(page - 1) * PER_PAGE + 1}–{Math.min(page * PER_PAGE, rows.length)} of {rows.length} records</Typography>
-      <Stack spacing={1} sx={{ width: '100%' }}>{visible.map((row) => <Typography key={row} sx={{ p: 1.75, borderRadius: 2, bgcolor: '#f8f9fc' }}>{row}</Typography>)}</Stack>
+      <Stack spacing={1} sx={{ width: '100%' }}>{visible.map((row) => <Typography key={row} sx={{ p: 1.75, borderRadius: 2, bgcolor: 'action.hover' }}>{row}</Typography>)}</Stack>
       <Pagination count={pageCount} page={page} onChange={(_, value) => setPage(value)} color="primary" shape="rounded" />
     </Stack>
   </ProjectPanel>

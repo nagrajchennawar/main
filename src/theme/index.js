@@ -1,8 +1,11 @@
 import { createTheme } from '@mui/material/styles'
 
-const theme = createTheme({
+export default function createAppTheme(mode = 'light') {
+  const darkMode = mode === 'dark'
+
+  return createTheme({
   palette: {
-    mode: 'light',
+    mode,
     primary: {
       main: '#4f46e5',
       light: '#818cf8',
@@ -16,12 +19,12 @@ const theme = createTheme({
       contrastText: '#ffffff',
     },
     background: {
-      default: '#f3f6fb',
-      paper: '#ffffff',
+      default: darkMode ? '#0b1120' : '#f3f6fb',
+      paper: darkMode ? '#111827' : '#ffffff',
     },
     text: {
-      primary: '#111827',
-      secondary: '#64748b',
+      primary: darkMode ? '#f1f5f9' : '#111827',
+      secondary: darkMode ? '#a3afc2' : '#64748b',
     },
     success: {
       main: '#10b981',
@@ -87,6 +90,14 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: darkMode ? '#0b1120' : '#f3f6fb',
+          color: darkMode ? '#f1f5f9' : '#111827',
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -102,18 +113,26 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 18,
-          boxShadow: '0 10px 30px rgba(15, 23, 42, 0.08)',
+          backgroundColor: darkMode ? '#111827' : '#ffffff',
+          boxShadow: darkMode ? '0 10px 30px rgba(0, 0, 0, 0.24)' : '0 10px 30px rgba(15, 23, 42, 0.08)',
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        colorDefault: {
+          color: darkMode ? '#1f2937' : undefined,
+          backgroundColor: darkMode ? '#e2e8f0' : undefined,
         },
       },
     },
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          borderRight: '1px solid rgba(148, 163, 184, 0.22)',
+          borderRight: `1px solid ${darkMode ? 'rgba(148, 163, 184, 0.16)' : 'rgba(148, 163, 184, 0.22)'}`,
         },
       },
     },
   },
-})
-
-export default theme
+  })
+}

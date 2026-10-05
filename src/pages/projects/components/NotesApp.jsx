@@ -63,7 +63,7 @@ export default function NotesApp() {
         ) : (
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, minmax(0, 1fr))' }, gap: 1.5 }}>
             {filteredNotes.map((note) => (
-              <Box key={note.id} sx={{ p: 2, borderRadius: 3, bgcolor: '#f8f9fc', border: '1px solid #eef0f5' }}>
+              <Box key={note.id} sx={{ p: 2, borderRadius: 3, bgcolor: 'action.hover', border: '1px solid', borderColor: 'divider' }}>
                 <Stack direction="row" spacing={1} sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }}>
                   <Box sx={{ minWidth: 0 }}>
                     <Typography sx={{ fontWeight: 800, overflowWrap: 'anywhere' }}>{note.title}</Typography>

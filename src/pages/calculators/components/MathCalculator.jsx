@@ -74,7 +74,7 @@ export default function MathCalculator() {
             else if (key === '±') setDisplay(String(Number(display) * -1))
             else if (key === '%') setDisplay(String(Number(display) / 100))
             else press(key)
-          }} sx={{ minHeight: { xs: 54, sm: 64 }, fontSize: 20, gridColumn: key === '0' ? 'span 2' : undefined, bgcolor: special ? '#5b5ce2' : '#f8f9fc', color: special ? 'white' : '#182033', borderColor: '#e8eaf2', '&:hover': { bgcolor: special ? '#4b4cc8' : '#edf0f7' } }}>{key}</Button>
+          }} sx={{ minHeight: { xs: 54, sm: 64 }, fontSize: 20, gridColumn: key === '0' ? 'span 2' : undefined, bgcolor: special ? '#5b5ce2' : 'action.hover', color: special ? 'white' : 'text.primary', borderColor: 'divider', '&:hover': { bgcolor: special ? '#4b4cc8' : 'action.selected' } }}>{key}</Button>
         })}
       </Box>
       <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 2, textAlign: 'center' }}>Keyboard: numbers and operators · Enter to calculate · Esc to clear</Typography>

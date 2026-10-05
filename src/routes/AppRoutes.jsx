@@ -8,10 +8,10 @@ import ProjectsPage from '../pages/projects'
 import MoreProjectsPage from '../pages/more-projects'
 import UsersPage from '../pages/UsersPage'
 
-export default function AppRoutes() {
+export default function AppRoutes({ mode, onToggleMode }) {
   return (
     <Routes>
-      <Route element={<MainLayout />}>
+      <Route element={<MainLayout mode={mode} onToggleMode={onToggleMode} />}>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/calculators" element={<CalculatorsPage />} />
         <Route path="/calculators/:calculatorId" element={<CalculatorsPage />} />

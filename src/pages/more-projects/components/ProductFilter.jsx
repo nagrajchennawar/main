@@ -25,7 +25,7 @@ export default function ProductFilter() {
         <FormControl sx={{ minWidth: 170 }}><Select value={sort} onChange={(e) => setSort(e.target.value)}><MenuItem value="featured">Sort by name</MenuItem><MenuItem value="low">Price: low to high</MenuItem><MenuItem value="high">Price: high to low</MenuItem></Select></FormControl>
       </Stack>
       <Typography variant="body2" color="text.secondary">{filtered.length} products</Typography>
-      <Stack spacing={1}>{filtered.map((p) => <Stack key={p.name} direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', p: 1.5, borderRadius: 2, bgcolor: '#f8f9fc' }}><Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}><Typography sx={{ fontWeight: 700 }}>{p.name}</Typography><Chip size="small" label={p.category} /></Stack><Typography sx={{ fontWeight: 700 }}>${p.price.toFixed(2)}</Typography></Stack>)}</Stack>
+      <Stack spacing={1}>{filtered.map((p) => <Stack key={p.name} direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', p: 1.5, borderRadius: 2, bgcolor: 'action.hover' }}><Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}><Typography sx={{ fontWeight: 700 }}>{p.name}</Typography><Chip size="small" label={p.category} /></Stack><Typography sx={{ fontWeight: 700 }}>${p.price.toFixed(2)}</Typography></Stack>)}</Stack>
       {filtered.length === 0 && <Typography align="center" color="text.secondary">No products match these filters.</Typography>}
     </Stack>
   </ProjectPanel>

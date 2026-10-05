@@ -22,7 +22,7 @@ export default function DragDropList() {
     <Stack spacing={2}>
       <Typography color="text.secondary">Drag items to change their order.</Typography>
       <List sx={{ p: 0 }}>{items.map((item, index) => (
-        <Paper key={item} variant="outlined" draggable onDragStart={() => setDragging(index)} onDragOver={(event) => event.preventDefault()} onDrop={() => reorder(index)} onDragEnd={() => setDragging(null)} sx={{ mb: 1, borderRadius: 3, cursor: 'grab', opacity: dragging === index ? 0.45 : 1, '&:hover': { bgcolor: '#f8f9fc' } }}>
+        <Paper key={item} variant="outlined" draggable onDragStart={() => setDragging(index)} onDragOver={(event) => event.preventDefault()} onDrop={() => reorder(index)} onDragEnd={() => setDragging(null)} sx={{ mb: 1, borderRadius: 3, cursor: 'grab', bgcolor: 'background.paper', color: 'text.primary', opacity: dragging === index ? 0.45 : 1, '&:hover': { bgcolor: 'action.hover' } }}>
           <ListItem><ListItemIcon sx={{ minWidth: 38, color: 'text.secondary' }}><DragIndicatorRounded /></ListItemIcon><ListItemText primary={item} /></ListItem>
         </Paper>
       ))}</List>

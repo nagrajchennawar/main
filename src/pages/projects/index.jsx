@@ -105,7 +105,7 @@ export default function ProjectsPage() {
                     <Box sx={{ width: 50, height: 50, borderRadius: 3, display: 'grid', placeItems: 'center', bgcolor: item.tint, color: item.color }}>
                       <Icon />
                     </Box>
-                    <Chip size="small" label={item.category} sx={{ bgcolor: '#f5f6fa', fontWeight: 600 }} />
+                    <Chip size="small" label={item.category} sx={{ bgcolor: 'action.hover', color: 'text.secondary', fontWeight: 600 }} />
                   </Stack>
                   <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.75 }}>{item.title}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.65, mb: 2 }}>{item.description}</Typography>

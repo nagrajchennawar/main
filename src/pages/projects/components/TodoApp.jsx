@@ -83,14 +83,14 @@ export default function TodoApp() {
         </Stack>
 
         {filteredTasks.length === 0 ? (
-          <Box sx={{ py: 5, textAlign: 'center', borderRadius: 3, bgcolor: '#f8f9fc' }}>
+          <Box sx={{ py: 5, textAlign: 'center', borderRadius: 3, bgcolor: 'action.hover' }}>
             <Typography sx={{ fontWeight: 700 }}>{tasks.length ? 'No tasks in this filter' : 'Nothing here just yet'}</Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>Add a task above to get started.</Typography>
           </Box>
         ) : (
           <Stack spacing={1}>
             {filteredTasks.map((task) => (
-              <Paper key={task.id} variant="outlined" sx={{ borderRadius: 3, borderColor: 'rgba(148,163,184,0.2)', '&:hover': { bgcolor: '#fafaff', borderColor: 'rgba(79,70,229,0.3)' } }}>
+              <Paper key={task.id} variant="outlined" sx={{ borderRadius: 3, borderColor: 'divider', '&:hover': { bgcolor: 'action.hover', borderColor: 'primary.light' } }}>
                 <ListItem
                   secondaryAction={
                     <IconButton aria-label={`Delete ${task.text}`} onClick={() => deleteTask(task.id)}>

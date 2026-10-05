@@ -15,14 +15,14 @@ export default function ShoppingCart() {
     <Stack spacing={2.5}>
       <Typography variant="body2" color="text.secondary">{count} item{count === 1 ? '' : 's'} in your cart</Typography>
       <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, minmax(0, 1fr))' }, gap: 1.5 }}>
-        {products.map((item) => <Box key={item.id} sx={{ p: 2, border: '1px solid #eceef4', borderRadius: 3 }}>
+        {products.map((item) => <Box key={item.id} sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 3, bgcolor: 'background.paper' }}>
           <Stack direction="row" sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
             <Box><Typography sx={{ fontWeight: 700 }}>{item.name}</Typography><Typography color="text.secondary">${item.price.toFixed(2)}</Typography></Box>
             <Stack direction="row" sx={{ alignItems: 'center' }}>{cart[item.id] ? <><IconButton aria-label={`Remove one ${item.name}`} onClick={() => remove(item.id)}><RemoveShoppingCartRounded /></IconButton><Typography>{cart[item.id]}</Typography></> : null}<Button aria-label={`Add ${item.name} to cart`} onClick={() => add(item.id)} startIcon={<AddShoppingCartRounded />}>Add</Button></Stack>
           </Stack>
         </Box>)}
       </Box>
-      <Box sx={{ p: 2, borderRadius: 3, bgcolor: '#f5f6ff', display: 'flex', justifyContent: 'space-between' }}><Typography sx={{ fontWeight: 700 }}>Cart total</Typography><Typography sx={{ fontWeight: 800 }}>${total.toFixed(2)}</Typography></Box>
+      <Box sx={{ p: 2, borderRadius: 3, bgcolor: 'action.hover', display: 'flex', justifyContent: 'space-between' }}><Typography sx={{ fontWeight: 700 }}>Cart total</Typography><Typography sx={{ fontWeight: 800 }}>${total.toFixed(2)}</Typography></Box>
     </Stack>
   </ProjectPanel>
 }

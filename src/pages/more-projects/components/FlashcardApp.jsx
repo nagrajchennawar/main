@@ -26,7 +26,7 @@ export default function FlashcardApp() {
         <Button type="submit" variant="contained" startIcon={<AddRounded />}>Add card</Button>
       </Box>
       {!current ? <Typography color="text.secondary" align="center" sx={{ py: 4 }}>Add a flashcard to start studying.</Typography> : <>
-        <Box role="button" tabIndex={0} onClick={() => setFlipped((value) => !value)} onKeyDown={(e) => e.key === 'Enter' && setFlipped((value) => !value)} sx={{ minHeight: 230, display: 'grid', placeItems: 'center', p: 4, borderRadius: 4, textAlign: 'center', cursor: 'pointer', bgcolor: flipped ? '#eefaf6' : '#f2efff', border: '1px solid #e8e8f4' }}>
+        <Box role="button" tabIndex={0} onClick={() => setFlipped((value) => !value)} onKeyDown={(e) => e.key === 'Enter' && setFlipped((value) => !value)} sx={{ minHeight: 230, display: 'grid', placeItems: 'center', p: 4, borderRadius: 4, textAlign: 'center', cursor: 'pointer', bgcolor: (theme) => theme.palette.mode === 'dark' ? (flipped ? 'rgba(19,138,101,0.18)' : 'rgba(91,92,226,0.18)') : (flipped ? '#eefaf6' : '#f2efff'), border: '1px solid', borderColor: 'divider' }}>
           <Stack spacing={2} alignItems="center"><FlipRounded color="primary" /><Typography variant="h5" sx={{ fontWeight: 700 }}>{flipped ? current.back : current.front}</Typography><Typography variant="caption" color="text.secondary">Click card to flip</Typography></Stack>
         </Box>
         <Stack direction="row" sx={{ justifyContent: 'space-between', alignItems: 'center' }}>

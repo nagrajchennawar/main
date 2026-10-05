@@ -81,7 +81,7 @@ export default function CalculatorsPage() {
             <CardContent sx={{ p: 2.75, display: 'flex', flexDirection: 'column', minHeight: 218 }}>
               <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 2.25 }}>
                 <Box sx={{ width: 50, height: 50, borderRadius: 3, display: 'grid', placeItems: 'center', bgcolor: calculator.tint, color: calculator.color }}><Icon /></Box>
-                <Chip size="small" label={calculator.category} sx={{ bgcolor: '#f5f6fa', fontWeight: 600 }} />
+                <Chip size="small" label={calculator.category} sx={{ bgcolor: 'action.hover', color: 'text.secondary', fontWeight: 600 }} />
               </Stack>
               <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.75 }}>{calculator.title}</Typography>
               <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.65, mb: 2 }}>{calculator.description}</Typography>

@@ -21,8 +21,8 @@ export default function GuessingGame() {
   const reset = () => { setSecret(Math.floor(Math.random() * 100) + 1); setGuess(''); setAttempts(0); setMessage('A new number is ready. Make your guess!'); setWon(false) }
   return <ToolPanel subtitle="Guess the secret number from 1 to 100.">
     <Stack spacing={3}>
-      <Box sx={{ p: 3, borderRadius: 4, bgcolor: '#edf2ff', textAlign: 'center' }}>
-        <SportsEsportsRounded sx={{ fontSize: 44, color: '#4b79d8', mb: 1 }} />
+      <Box sx={{ p: 3, borderRadius: 4, bgcolor: 'action.hover', textAlign: 'center' }}>
+        <SportsEsportsRounded sx={{ fontSize: 44, color: 'primary.light', mb: 1 }} />
         <Typography variant="h6" sx={{ fontWeight: 800 }}>{message}</Typography>
         <Typography color="text.secondary" sx={{ mt: 1 }}>Attempts: <strong>{attempts}</strong></Typography>
       </Box>

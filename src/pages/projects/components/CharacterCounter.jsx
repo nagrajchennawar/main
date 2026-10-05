@@ -22,7 +22,7 @@ export default function CharacterCounter() {
         <Typography variant="caption" color="text.secondary" align="right">{text.length} / {LIMIT} characters</Typography>
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, minmax(0, 1fr))', sm: 'repeat(4, minmax(0, 1fr))' }, gap: 1.5 }}>
           {stats.map((stat) => (
-            <Box key={stat.label} sx={{ p: 2, textAlign: 'center', borderRadius: 3, bgcolor: '#f5f6ff' }}>
+            <Box key={stat.label} sx={{ p: 2, textAlign: 'center', borderRadius: 3, bgcolor: 'action.hover' }}>
               <Typography variant="h5" sx={{ fontWeight: 800, color: '#4f46e5' }}>{stat.value}</Typography>
               <Typography variant="caption" color="text.secondary">{stat.label}</Typography>
             </Box>
