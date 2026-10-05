@@ -1,4 +1,12 @@
-import { DashboardRounded, SettingsRounded, TrendingUpRounded, PeopleAltRounded, MenuRounded } from '@mui/icons-material'
+import {
+  CalculateRounded,
+  DashboardRounded,
+  MenuRounded,
+  PeopleAltRounded,
+  SettingsRounded,
+  AppsRounded,
+  WidgetsRounded,
+} from '@mui/icons-material'
 import {
   AppBar,
   Box,
@@ -11,7 +19,6 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Stack,
   Toolbar,
   Typography,
   useMediaQuery,
@@ -24,6 +31,9 @@ const drawerWidth = 240
 
 const navItems = [
   { label: 'Dashboard', path: '/', icon: DashboardRounded },
+  { label: 'Calculators', path: '/calculators', icon: CalculateRounded },
+  { label: 'Projects', path: '/projects', icon: AppsRounded },
+  { label: 'Mini projects', path: '/mini-projects', icon: WidgetsRounded },
   { label: 'Users', path: '/users', icon: PeopleAltRounded },
   { label: 'Settings', path: '/settings', icon: SettingsRounded },
 ]
@@ -44,7 +54,9 @@ export default function MainLayout() {
       <Divider />
       <List sx={{ px: 1, py: 2 }}>
         {navItems.map(({ label, path, icon: Icon }) => {
-          const selected = location.pathname === path
+          const selected = path === '/'
+            ? location.pathname === path
+            : location.pathname.startsWith(path)
 
           return (
             <ListItem key={path} disablePadding>
@@ -84,26 +96,6 @@ export default function MainLayout() {
           )
         })}
       </List>
-
-      <Box sx={{ px: 2, pb: 2, mt: 'auto' }}>
-        <Box
-          sx={{
-            p: 2,
-            borderRadius: 3,
-            background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(249, 115, 22, 0.12))',
-          }}
-        >
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
-            <TrendingUpRounded fontSize="small" color="primary" />
-            <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-              Performance
-            </Typography>
-          </Stack>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            Q3 pipeline is trending ahead of target.
-          </Typography>
-        </Box>
-      </Box>
     </Box>
   )
 
