@@ -82,13 +82,13 @@ export default function MoreProjectsPage() {
   const Project = project ? projectViews[project.id] : null
 
   if (projectId && !project) {
-    return <Box sx={{ textAlign: 'center', py: 8 }}><Typography variant="h5" sx={{ mb: 2 }}>Project not found</Typography><Button component={Link} to="/more-projects" variant="contained">Browse projects</Button></Box>
+    return <Box sx={{ textAlign: 'center', py: 8 }}><Typography variant="h5" sx={{ mb: 2 }}>Project not found</Typography><Button component={Link} to="/mini-projects" variant="contained">Browse projects</Button></Box>
   }
 
   if (project && Project) {
     const Icon = project.icon
     return <>
-      <Button onClick={() => navigate('/more-projects')} startIcon={<ArrowBackRounded />} sx={{ mb: 2 }}>All projects</Button>
+      <Button onClick={() => navigate('/mini-projects')} startIcon={<ArrowBackRounded />} sx={{ mb: 2 }}>All projects</Button>
       <PageHeader title={project.title} subtitle={project.description} action={<Box sx={{ width: 48, height: 48, borderRadius: 3, display: 'grid', placeItems: 'center', bgcolor: project.tint, color: project.color }}><Icon /></Box>} />
       <Project />
     </>
@@ -100,7 +100,7 @@ export default function MoreProjectsPage() {
       {projects.map((item) => {
         const Icon = item.icon
         return <Card key={item.id} sx={{ overflow: 'hidden', border: '1px solid rgba(148,163,184,0.16)', transition: 'transform 180ms ease, box-shadow 180ms ease', '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 18px 40px rgba(15,23,42,0.12)' } }}>
-          <CardActionArea component={Link} to={`/more-projects/${item.id}`} sx={{ height: '100%' }}>
+          <CardActionArea component={Link} to={`/mini-projects/${item.id}`} sx={{ height: '100%' }}>
             <CardContent sx={{ p: 2.75, display: 'flex', flexDirection: 'column', minHeight: 205 }}>
               <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 2.25 }}>
                 <Box sx={{ width: 50, height: 50, borderRadius: 3, display: 'grid', placeItems: 'center', bgcolor: item.tint, color: item.color }}><Icon /></Box>

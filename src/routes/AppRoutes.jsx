@@ -17,8 +17,8 @@ export default function AppRoutes() {
         <Route path="/calculators/:calculatorId" element={<CalculatorsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectId" element={<ProjectsPage />} />
-        <Route path="/more-projects" element={<MoreProjectsPage />} />
-        <Route path="/more-projects/:projectId" element={<MoreProjectsPage />} />
+        <Route path="/mini-projects" element={<MoreProjectsPage />} />
+        <Route path="/mini-projects/:projectId" element={<MoreProjectsPage />} />
         <Route path="/users" element={<UsersPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/404" element={<NotFoundPage />} />
